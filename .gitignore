@@ -1,0 +1,6 @@
+output/
+tmp_*
+*SDSME*
+*DSPRE*
+
+*.nds

@@ -1,0 +1,3 @@
+PokeRenegadeEn.nds
+getall xml/PokeRenegadeEn.xml
+q
