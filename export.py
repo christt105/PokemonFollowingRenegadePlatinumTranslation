@@ -2,8 +2,6 @@ import subprocess
 import os
 import shutil
 
-dirname = os.path.dirname(__file__)
-
 os.chdir("./thenewpoketext")
 
 if not os.path.exists('./xml'):
