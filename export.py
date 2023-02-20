@@ -22,4 +22,9 @@ os.chdir("../")
 src = './thenewpoketext/xml'
 dst = './xml'
 
+# Remove the existing xml directory
+if os.path.exists(dst):
+    shutil.rmtree(dst)
+
+# Move the thenewpoketext/xml directory to the xml directory
 shutil.move(src, dst)

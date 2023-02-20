@@ -2,5 +2,6 @@ output/
 tmp_*
 *SDSME*
 *DSPRE*
+__pycache__
 
 *.nds
