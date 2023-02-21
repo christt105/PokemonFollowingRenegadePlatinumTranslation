@@ -1,3 +1,0 @@
-PokeRenegadeEs.nds
-getall xml/PokeRenegadeEs.xml
-q

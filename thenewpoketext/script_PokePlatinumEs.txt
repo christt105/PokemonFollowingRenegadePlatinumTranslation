@@ -1,3 +1,0 @@
-PokePlatinumEs.nds
-getall xml/PokePlatinumEs.xml
-q
