@@ -1,0 +1,36 @@
+{
+    "213": {
+        "132": {
+            "text1": null,
+            "text2": "\\v0103\u3041\\x0000\\x0000 is feeling better, so you\\ndecided to take \\v0103\u3041\\x0000\\x0000 with you!\\r"
+        }
+    },
+    "220": {
+        "7": {
+            "text1": "BUTTON MODE",
+            "text2": "UNLOCK FPS"
+        },
+        "19": {
+            "text1": "NORMAL",
+            "text2": "OFF"
+        },
+        "20": {
+            "text1": "START = X",
+            "text2": "BATTLE"
+        },
+        "21": {
+            "text1": "L = A",
+            "text2": "ALWAYS"
+        },
+        "47": {
+            "text1": "Choose one of three sets of button\\nsettings.",
+            "text2": "Use at your own risk.\\nFramerate may not be consistent."
+        }
+    },
+    "609": {
+        "0": {
+            "text1": "PRESS START",
+            "text2": ""
+        }
+    }
+}
