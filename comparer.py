@@ -43,14 +43,29 @@ def compare_files(files_dict1, files_dict2):
                     "text2": text2
                 }
 
-        # Check for any texts that exist in texts_dict2 but not in texts_dict1
-        for text_id, text2 in texts_dict2.items():
-            if text_id not in texts_dict1:
-                # Add the text from text_dict2 to the result with None for text1
+    for file_id, texts_dict2 in files_dict2.items():
+        # Check if the file exists in files_dict1
+        if file_id not in files_dict1:
+            # Add all texts in texts_dict2 to the result with None for text1
+            for text_id, text2 in texts_dict2.items():
                 result.setdefault(file_id, {})[text_id] = {
                     "text1": None,
                     "text2": text2
                 }
+            continue
+
+        texts_dict1 = files_dict1[file_id]
+
+        for text_id, text2 in texts_dict2.items():
+            if text_id not in texts_dict1:
+                result.setdefault(file_id, {})[text_id] = {
+                    "text1": None,
+                    "text2": text2
+                }
+                continue
+        
+    # sort the result by key converted to int
+    result = {k: v for k, v in sorted(result.items(), key=lambda item: int(item[0]))}
 
     return result
 
@@ -65,6 +80,7 @@ comparison_files = [
     ['xml/PokePlatinumEn.xml', 'xml/PokeFollowingRenegadeEn.xml'],
     ['xml/PokePlatinumEn.xml', 'xml/PokeFollowingEn.xml'],
     ['xml/PokeRenegadeEn.xml', 'xml/PokeRenegadeEs.xml'],
+    ['xml/PokeRenegadeEn.xml', 'xml/PokeFollowingEn.xml'],
 ]
 
 for files in comparison_files:
