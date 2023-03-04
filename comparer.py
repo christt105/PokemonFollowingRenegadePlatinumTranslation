@@ -62,11 +62,74 @@ def compare_files(files_dict1, files_dict2):
                     "text1": None,
                     "text2": text2
                 }
-                continue
         
-    # sort the result by key converted to int
-    result = {k: v for k, v in sorted(result.items(), key=lambda item: int(item[0]))}
+    return result
 
+def compare_files_split(files_dict1, files_dict2):
+    result = {
+        "changed": {},
+        "missing_in_1": {},
+        "missing_in_2": {}
+    }
+
+    # Loop through all files in files_dict1
+    for file_id, texts_dict1 in files_dict1.items():
+        # Check if the file exists in files_dict2
+        if file_id not in files_dict2:
+            # Add all texts in texts_dict1 to the missing_in_2 section
+            for text_id, text1 in texts_dict1.items():
+                result["missing_in_2"].setdefault(file_id, {})[text_id] = {
+                    "text1": text1,
+                    "text2": None
+                }
+            continue
+
+        # Get the texts dictionary for the current file in files_dict2
+        texts_dict2 = files_dict2[file_id]
+
+        # Loop through all texts in texts_dict1
+        for text_id, text1 in texts_dict1.items():
+            # Check if the text exists in texts_dict2
+            if text_id not in texts_dict2:
+                # Add the text from text_dict1 to the missing_in_2 section
+                result["missing_in_2"].setdefault(file_id, {})[text_id] = {
+                    "text1": text1,
+                    "text2": None
+                }
+                continue
+
+            # Get the text for the current text_id in texts_dict2
+            text2 = texts_dict2[text_id]
+
+            # Compare the text from both files
+            if text1 != text2:
+                # Add the text from both files to the changed section
+                result["changed"].setdefault(file_id, {})[text_id] = {
+                    "text1": text1,
+                    "text2": text2
+                }
+
+    for file_id, texts_dict2 in files_dict2.items():
+        # Check if the file exists in files_dict1
+        if file_id not in files_dict1:
+            # Add all texts in texts_dict2 to the missing_in_1 section
+            for text_id, text2 in texts_dict2.items():
+                result["missing_in_1"].setdefault(file_id, {})[text_id] = {
+                    "text1": None,
+                    "text2": text2
+                }
+            continue
+
+        texts_dict1 = files_dict1[file_id]
+
+        for text_id, text2 in texts_dict2.items():
+            if text_id not in texts_dict1:
+                # Add the text from text_dict2 to the missing_in_1 section
+                result["missing_in_1"].setdefault(file_id, {})[text_id] = {
+                    "text1": None,
+                    "text2": text2
+                }
+        
     return result
 
 
@@ -91,8 +154,9 @@ for files in comparison_files:
 
     os.makedirs(os.path.dirname(output_file_name), exist_ok=True)
 
-    comparison = compare_files(xml1, xml2)
-
     with open(output_file_name+'.json', 'w', encoding='utf-8') as f:
-        json.dump(comparison, f, indent=4)
+        json.dump(compare_files(xml1, xml2), f, indent=4, sort_keys=True)
+
+    with open(output_file_name + '-split.json', 'w', encoding='utf-8') as f:
+        json.dump(compare_files_split(xml1, xml2), f, indent=4, sort_keys=True)
 
