@@ -1,0 +1,2 @@
+PokeFollowingEs.nds
+patch ../xml/PokeFollowingEs.xml

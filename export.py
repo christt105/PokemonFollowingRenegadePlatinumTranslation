@@ -1,6 +1,7 @@
 import subprocess
 import os
 import shutil
+import msg_name_changer
 
 os.chdir("./thenewpoketext")
 
@@ -15,7 +16,7 @@ unpacking = subprocess.call(["export.cmd"])
 
 os.chdir("../")
 
-msg_changer = subprocess.call(["python", "msg_name_changer.py"])
+msg_name_changer.rename_msg_files()
 
 os.chdir("./thenewpoketext")
 

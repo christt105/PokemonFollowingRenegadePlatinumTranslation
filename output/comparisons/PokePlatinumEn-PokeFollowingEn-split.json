@@ -1,5 +1,11 @@
 {
     "changed": {
+        "0": {
+            "3": {
+                "text1": "\\v0101\u3041\\x0000\\x0000 used\\nPound!",
+                "text2": "\\v0101\u3041\\x0000\\x0000 used\\nPaund!"
+            }
+        },
         "220": {
             "7": {
                 "text1": "BUTTON MODE",

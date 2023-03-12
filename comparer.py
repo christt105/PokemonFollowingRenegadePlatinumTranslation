@@ -3,6 +3,15 @@ import os
 from xml_parser import parse_xml
 import json
 
+comparison_files = [
+    ['xml/PokeFollowingEn.xml', 'xml/PokeFollowingRenegadeEn.xml'],
+    ['xml/PokePlatinumEs.xml', 'xml/PokePlatinumEn.xml'],
+    ['xml/PokePlatinumEn.xml', 'xml/PokeFollowingRenegadeEn.xml'],
+    ['xml/PokePlatinumEn.xml', 'xml/PokeFollowingEn.xml'],
+    ['xml/PokeRenegadeEn.xml', 'xml/PokeRenegadeEs.xml'],
+    ['xml/PokeRenegadeEn.xml', 'xml/PokeFollowingEn.xml'],
+    ['xml/PokeFollowingEs.xml', 'xml/PokeFollowingEn.xml'],
+]
 
 def compare_files(files_dict1, files_dict2):
     result = {}
@@ -136,27 +145,18 @@ def compare_files_split(files_dict1, files_dict2):
 def get_file_name(path):
     return os.path.splitext(os.path.basename(path))[0]
 
-
-comparison_files = [
-    ['xml/PokeFollowingEn.xml', 'xml/PokeFollowingRenegadeEn.xml'],
-    ['xml/PokePlatinumEs.xml', 'xml/PokePlatinumEn.xml'],
-    ['xml/PokePlatinumEn.xml', 'xml/PokeFollowingRenegadeEn.xml'],
-    ['xml/PokePlatinumEn.xml', 'xml/PokeFollowingEn.xml'],
-    ['xml/PokeRenegadeEn.xml', 'xml/PokeRenegadeEs.xml'],
-    ['xml/PokeRenegadeEn.xml', 'xml/PokeFollowingEn.xml'],
-]
-
 for files in comparison_files:
     xml1 = parse_xml(files[0])
     xml2 = parse_xml(files[1])
 
+    # TODO: Better a csv?
     output_file_name = f"output/comparisons/{get_file_name(files[0])}-{get_file_name(files[1])}"
 
     os.makedirs(os.path.dirname(output_file_name), exist_ok=True)
 
     with open(output_file_name+'.json', 'w', encoding='utf-8') as f:
-        json.dump(compare_files(xml1, xml2), f, indent=4, sort_keys=True)
+        json.dump(compare_files(xml1, xml2), f, indent=4)
 
     with open(output_file_name + '-split.json', 'w', encoding='utf-8') as f:
-        json.dump(compare_files_split(xml1, xml2), f, indent=4, sort_keys=True)
+        json.dump(compare_files_split(xml1, xml2), f, indent=4)
 

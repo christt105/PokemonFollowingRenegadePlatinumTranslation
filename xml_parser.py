@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 
 def parse_xml(file_path):
     # Parse the XML file using ET.parse()
-    tree = ET.parse(file_path)
+    tree = ET.parse(file_path, ET.XMLParser(encoding='utf-16'))
 
     # Create a dictionary to store the files and their texts
     files_dict = {}
@@ -21,7 +21,9 @@ def parse_xml(file_path):
 
             # Get the ID and text of the current text element
             text_id = text_elem.get('id')
-            text = text_elem.text.strip()
+            text = text_elem.text
+            if(text != None):
+                text = text.strip()
 
             # Add the ID and text as a dictionary to the texts dictionary
             texts_dict[text_id] = text

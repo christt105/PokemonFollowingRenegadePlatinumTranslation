@@ -1,0 +1,3 @@
+PokeFollowingEs.nds
+getall xml/PokeFollowingEs.xml
+q

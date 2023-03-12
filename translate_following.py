@@ -1,31 +1,12 @@
+# Translate Pokémon Following texts from English to Spanish. 
+# Uses "output/comparisons/PokePlatinumEn-PokeFollowingEn.json" from comparer.py and deep_translator library.
+
 import json
 import os
 import csv
 from deep_translator import GoogleTranslator, MyMemoryTranslator
 
-# Function to extract special characters from text
-
-
-def extract_special_chars(text):
-    special_chars = []
-    i = 0
-    while i < len(text):
-        if text[i:i+2] == "\\v":
-            special_chars.append(text[i:i+10])
-            i += 10
-        elif text[i:i+2] == "\\x":
-            special_chars.append(text[i:i+6])
-            i += 6
-        elif text[i:i+2] == "\\n":
-            special_chars.append(text[i:i+2])
-            i += 2
-        else:
-            i += 1
-    return special_chars
-
 # Function to convert special characters to words
-
-
 def convert_special_chars_to_words(text, special_chars):
     text = text.replace("\\n", " ")
 
@@ -54,10 +35,6 @@ with open("output/comparisons/PokePlatinumEn-PokeFollowingEn.json") as f:
     data = json.load(f)
     translations = {}
     for key, value in data["724"].items():
-        # for special_char in extract_special_chars(value["text2"]):
-        #     if special_char not in special_chars:
-        #         special_chars.append(special_char)
-
         text = value.get("text2")
 
         if text is None or text == "":

@@ -1,3 +1,0 @@
-PokeFollowingRenegadeEsTranslated.nds
-getall xml/PokeFollowingRenegadeEsTranslated.xml
-q
