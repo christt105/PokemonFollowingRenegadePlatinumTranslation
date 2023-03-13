@@ -6,6 +6,8 @@ import os
 import csv
 from deep_translator import GoogleTranslator, MyMemoryTranslator
 
+target_language = "es"
+
 # Function to convert special characters to words
 def convert_special_chars_to_words(text, special_chars):
     text = text.replace("\\n", " ")
@@ -15,12 +17,11 @@ def convert_special_chars_to_words(text, special_chars):
 
     return text
 
-
 def translate_text(text, translator="google"):
     if translator == "google":
-        translation = GoogleTranslator(source="en", target="es").translate(text)
+        translation = GoogleTranslator(source="en", target=target_language).translate(text)
     elif translator == "mymemory":
-        translation = MyMemoryTranslator(source="en", target="es").translate(text)
+        translation = MyMemoryTranslator(source="en", target=target_language).translate(text)
     else:
         print("Invalid translator")
         return None
@@ -31,7 +32,7 @@ def translate_text(text, translator="google"):
 with open("special_characters.json") as special_chars_file:
     special_chars = json.load(special_chars_file)
 
-with open("output/comparisons/PokePlatinumEn-PokeFollowingEn.json") as f:
+with open("output/comparisons/merge/PokePlatinumEn-PokeFollowingEn.json") as f:
     data = json.load(f)
     translations = {}
     for key, value in data["724"].items():
@@ -48,10 +49,10 @@ with open("output/comparisons/PokePlatinumEn-PokeFollowingEn.json") as f:
         if translation is not None:
             translations[key] = translation
 
-if not os.path.exists("./output/results/translated/"):
-    os.mkdir("./output/results/translated/")
+if not os.path.exists("./output/translated/"):
+    os.mkdir("./output/translated/")
 
-with open(f"output/results/translated/724.csv", "w", newline='', encoding='utf-8') as outfile:
+with open(f"output/translated/Following_724.csv", "w", newline='', encoding='utf-8') as outfile:
     fieldnames = ["id", "original", "translated"]
     writer = csv.DictWriter(outfile, fieldnames=fieldnames, delimiter=";")
     writer.writeheader()

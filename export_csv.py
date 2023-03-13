@@ -1,4 +1,4 @@
-# Convert all the xml into csv table
+# Convert all the xml into csv table with the file_id, text_id and the text for each file
 
 import os
 import csv
@@ -20,7 +20,13 @@ for xml_file in xml_files:
 
 table = {}
 
-with open(f"output/results/files.csv", "w", newline='', encoding='utf-8') as outfile:
+outputFolder = "output/comparisons/"
+
+# Check if the folder doesn't exists and create it
+if not os.path.exists(outputFolder):
+    os.makedirs(outputFolder)
+
+with open(outputFolder + "all_texts.csv", "w", newline='', encoding='utf-8') as outfile:
     writer = csv.writer(outfile, delimiter=';')
 
     # Write the header row

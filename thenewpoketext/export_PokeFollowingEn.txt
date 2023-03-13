@@ -1,3 +1,0 @@
-PokeFollowingEn.nds
-getall xml/PokeFollowingEn.xml
-q

@@ -3,7 +3,7 @@
 import xml.etree.ElementTree as ET
 import json
 
-comparisonFile = "output\comparisons\PokeRenegadeEn-PokeFollowingEn-split.json"
+comparisonFile = "output/comparisons/split/PokeRenegadeEn-PokeFollowingEn.json"
 xmlFile = "xml/PokeFollowingRenegadeEs.xml"
 translatedFile = "xml/PokeFollowingEs.xml"
 
@@ -52,4 +52,4 @@ for file_id, texts in comparison["missing_in_1"].items():
         textElement.text = translatedTextElement.text
 
 # save xml file
-tree.write(xmlFile, encoding="utf-16")
+tree.write(xmlFile, encoding="utf-16", short_empty_elements=False)

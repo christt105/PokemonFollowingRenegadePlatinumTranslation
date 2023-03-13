@@ -37,15 +37,15 @@ def replace(xmlFile, jsonFile, reverse = False):
 
     export_path = './output/results/' + os.path.basename(xmlFile)
 
-    os.makedirs(os.path.dirname(export_path), exist_ok=True)
+    # os.makedirs(os.path.dirname(export_path), exist_ok=True)
 
     # Write the updated XML to a new file
-    tree.write(xmlFile, encoding='utf-16')
+    tree.write(xmlFile, encoding='utf-16', short_empty_elements=False)
 
 
 # Pokémon Following English to Spanish changes in Pokémon Following English
-replace('xml/PokeFollowingEs.xml', 'output/comparisons/PokePlatinumEs-PokePlatinumEn-split.json', reverse = True)
+replace('./xml/PokeFollowingEs.xml', 'output/comparisons/split/PokePlatinumEs-PokePlatinumEn.json', reverse = True)
 
 # Pokémon Renegade English to Spanish changes in Pokémon Following Renegade English
-replace('xml/PokeFollowingRenegadeEs.xml', 'output/comparisons/PokeRenegadeEn-PokeRenegadeEs-split.json')
+replace('./xml/PokeFollowingRenegadeEs.xml', 'output/comparisons/split/PokeRenegadeEn-PokeRenegadeEs.json')
 

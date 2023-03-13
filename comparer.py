@@ -150,13 +150,17 @@ for files in comparison_files:
     xml2 = parse_xml(files[1])
 
     # TODO: Better a csv?
-    output_file_name = f"output/comparisons/{get_file_name(files[0])}-{get_file_name(files[1])}"
+    output_folder = f"output/comparisons/"
+    merge_folder = output_folder + "merge/"
+    split_folder = output_folder + "split/"
+    output_file_name = f"{get_file_name(files[0])}-{get_file_name(files[1])}"
 
-    os.makedirs(os.path.dirname(output_file_name), exist_ok=True)
+    os.makedirs(os.path.dirname(merge_folder), exist_ok=True)
+    os.makedirs(os.path.dirname(split_folder), exist_ok=True)
 
-    with open(output_file_name+'.json', 'w', encoding='utf-8') as f:
+    with open(merge_folder + output_file_name+'.json', 'w', encoding='utf-8') as f:
         json.dump(compare_files(xml1, xml2), f, indent=4)
 
-    with open(output_file_name + '-split.json', 'w', encoding='utf-8') as f:
+    with open(split_folder + output_file_name + '.json', 'w', encoding='utf-8') as f:
         json.dump(compare_files_split(xml1, xml2), f, indent=4)
 

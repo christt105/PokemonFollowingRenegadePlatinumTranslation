@@ -1,6 +1,9 @@
+.vscode
 tmp_*
 *SDSME*
 *DSPRE*
 __pycache__
-
+thenewpoketext_script*
+build/
+output/
 *.nds

@@ -12,7 +12,7 @@ for file_name in os.listdir("./"):
 if not os.path.exists('./xml'):
     os.makedirs('./xml')
 
-unpacking = subprocess.call(["export.cmd"])
+unpacking = subprocess.call(["thenewpoketext_script_export.cmd"])
 
 os.chdir("../")
 
@@ -20,7 +20,7 @@ msg_name_changer.rename_msg_files()
 
 os.chdir("./thenewpoketext")
 
-unpacking = subprocess.call(["export.cmd"])
+unpacking = subprocess.call(["thenewpoketext_script_export.cmd"])
 
 os.chdir("../")
 

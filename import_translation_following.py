@@ -2,6 +2,22 @@ import json
 import xml.etree.ElementTree as ET
 import csv
 
+manual_translations = {
+    "220": {
+        "19": "NO",
+        "20": "BATALLA",
+        "21": "SIEMPRE",
+        "47": "Utilícelo bajo su propio riesgo.\\nLa velocidad puede no ser constante.",
+        "7": "DESBLOQUEO FPS"
+    },
+    "609": {
+        "0": "\n"
+    },
+    "213": {
+        "132": "¡\\v0103ぁ\\x0000\\x0000 se siente mejor, así que\\ndecidiste llevarte a \\v0103ぁ\\x0000\\x0000 contigo!\r"
+    }
+}
+
 # Open xml file
 tree = ET.parse('xml/PokeFollowingEs.xml')
 root = tree.getroot()
@@ -22,22 +38,24 @@ with open('special_characters.json', 'r') as f:
 
 new_line_at = 38
 
+
 def split_text(text, new_line_at):
     lines = []
     while len(text) > new_line_at:
         # Find the last space within the limit of new_line_at
         last_space = text[:new_line_at].rfind(' ')
-        if last_space == -1: # If no space is found, split at new_line_at anyway
+        if last_space == -1:  # If no space is found, split at new_line_at anyway
             last_space = new_line_at
         lines.append(text[:last_space])
-        text = text[last_space+1:] # Skip the space character
+        text = text[last_space+1:]  # Skip the space character
     lines.append(text)
     return '\\n'.join(lines)
+
 
 lines_to_review = []
 
 # Open csv file
-with open('output/results/translated/724.csv', newline='', encoding='utf-8') as csvfile:
+with open('output/translated/Following_724.csv', newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile, delimiter=';')
     for row in reader:
         # Find text with id=row['id']
@@ -45,7 +63,6 @@ with open('output/results/translated/724.csv', newline='', encoding='utf-8') as 
         if text is None:
             print('Could not find text with id={}'.format(row['id']))
             continue
-
 
         translated = row['translated']
 
@@ -79,21 +96,6 @@ with open('output/results/translated/724.csv', newline='', encoding='utf-8') as 
 
 print("Finished the translation of file 724.")
 
-manual_translations = {
-    "220": {
-        "19": "NO",
-        "20": "BATALLA",
-        "21": "SIEMPRE",
-        "47": "Utilícelo bajo su propio riesgo.\\nLa velocidad puede no ser constante.",
-        "7": "DESBLOQUEO FPS"
-    },
-    "609": {
-        "0": ""
-    },
-    "213": {
-        "132": "¡\\v0103ぁ\\x0000\\x0000 se siente mejor, así que\\ndecidiste llevarte a \\v0103ぁ\\x0000\\x0000 contigo!\r"
-    }
-}
 
 # Apply manual translations
 for file_id, texts in manual_translations.items():
@@ -106,12 +108,13 @@ for file_id, texts in manual_translations.items():
     for text_id, text_value in texts.items():
         text = file.find('text[@id="{}"]'.format(text_id))
         if text is None:
-            print('Could not find text with id={} in file {}'.format(text_id, file_id))
+            print('Could not find text with id={} in file {}'.format(
+                text_id, file_id))
             continue
         text.text = text_value
 
 
 # save xml file
-tree.write('xml/PokeFollowingEs.xml', encoding='utf-16')
+tree.write('xml/PokeFollowingEs.xml', encoding='utf-16', short_empty_elements=False)
 
 print("Please review lines:" + str(lines_to_review))
