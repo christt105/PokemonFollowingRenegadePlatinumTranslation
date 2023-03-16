@@ -8,6 +8,16 @@ Parche para traducir Pokémon Following Renegade Platinum al español. Si tienen
 
 ## Instrucciones
 
+### PC/Android
+
+* Descargar el parche `PokemonFollowingRenegadeEspañol.xdelta` desde [aquí](https://github.com/christt105/PokemonFollowingRenegadePlatinumTranslation/releases/tag/FollowingRenegade)
+* Acceder a https://www.marcrobledo.com/RomPatcher.js/.
+* Cargar la Rom de Pokémon Platinum USA (3541) y el parche `.xdelta`.
+* Clicar en "Apply patch".
+
+### Windows
+
+* Descargar `PokemonFollowingRenegadePlatinumEspañol.zip` desde [aquí](https://github.com/christt105/PokemonFollowingRenegadePlatinumTranslation/releases/tag/FollowingRenegade)
 * Abrir DeltaPatcherLite.exe
 * Seleccionar la Rom de Pokémon Platinum USA (3541) como "Original file".
   * Si quieren crear una copia de la Rom original, seleccionen "Backup original file". (Recomendado)
