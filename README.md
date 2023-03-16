@@ -1,6 +1,6 @@
-# PokemonFollowingRenegadeTranslation
+# Pokémon Following and Following Renegade Translation
  
-Repository used to translate Pokemon Following Renegade Platinum to Spanish. The translation is based on the translation of Pokemon Renegade Platinum to Spanish from [Drakyem](https://twitter.com/drakyem). The tool used is `thenewpoketext`. I am a beginner in ROM hacking, so I am sure that there are better ways to do this. If you have any suggestion, please let me know.
+Repository used to translate Pokémon Following Platinum and Pokémon Following Renegade Platinum to Spanish. The translation of Following Platinum is using the original texts from Spanish rom and translated the new content. The translation of Following Renegade Platinum is based on the translation of Pokémon Renegade Platinum to Spanish from [Drakyem](https://twitter.com/drakyem) and added the translation of Following Platinum. The tool used is `thenewpoketext`. I am a beginner in ROM hacking, so I am sure that there are better ways to do this. I hope this can be useful for someone.
 
 Special Thanks to:
 * [Drayano](https://twitter.com/Drayano60): Creator of Pokémon Renegade Platinum
@@ -56,4 +56,4 @@ Now, we only need to execute `import_following_into_followingrenegade.py`. Once 
 * Write the Romname. In this case, "`PokeFollowingRenegadeEs.nds`".
 * "`patch ../xml/PokeFollowingRenegadeEs.xml`". This will patch the rom with the new text.
 * (Only in platinum) You have to change the msg.narc files. Go to the `./thenewpoketext/tmp_PokeFollowingRenegadeEs/root/msgdata/` (in case you are using other rom change the name of the `tmp_` folder). Rename `msg.narc` to `pl_msg.narc` and `msg1.narc` to `msg.narc`.
-* Then, in the `thenewpoketext` session write `mkrom PokeFollowingRenegadeEs.nds`. This will create the patched rom with the texts changed.
+* Then, in the `thenewpoketext` session write "`mkrom PokeFollowingRenegadeEs.nds`". This will create the patched rom with the texts changed.

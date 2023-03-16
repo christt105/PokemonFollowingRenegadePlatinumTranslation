@@ -7,3 +7,5 @@ thenewpoketext_script*
 build/
 output/
 *.nds
+DeltaPatcher*
+*.xdelta

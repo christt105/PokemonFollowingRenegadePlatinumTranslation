@@ -20,7 +20,18 @@ translatedTree = ET.parse(translatedFile)
 translatedRoot = translatedTree.getroot()
 
 # go through "missing_in_1"
-for file_id, texts in comparison["missing_in_1"].items():
+comparison = comparison["missing_in_1"]
+
+# add manual translations
+comparison["220"] = {
+    "19": "NO",
+    "20": "BATALLA",
+    "21": "SIEMPRE",
+    "47": "Utilícelo bajo su propio riesgo.\\nLa velocidad puede no ser constante.",
+    "7": "DESBLOQUEO FPS"
+}
+
+for file_id, texts in comparison.items():
     # Find file with id=file_id
     fileElement = root.find('file[@id="{}"]'.format(file_id))
     if fileElement is None:
@@ -31,7 +42,8 @@ for file_id, texts in comparison["missing_in_1"].items():
     fileElement.set('change', 'true')
 
     # Find translated file with id=file_id
-    translatedFileElement = translatedRoot.find('file[@id="{}"]'.format(file_id))
+    translatedFileElement = translatedRoot.find(
+        'file[@id="{}"]'.format(file_id))
     if translatedFileElement is None:
         print('Could not find translated file with id={}'.format(file_id))
         continue
@@ -44,7 +56,8 @@ for file_id, texts in comparison["missing_in_1"].items():
             continue
 
         # Find translated text with id=text_id
-        translatedTextElement = translatedFileElement.find('text[@id="{}"]'.format(text_id))
+        translatedTextElement = translatedFileElement.find(
+            'text[@id="{}"]'.format(text_id))
         if translatedTextElement is None:
             print('Could not find translated text with id={}'.format(text_id))
             continue
