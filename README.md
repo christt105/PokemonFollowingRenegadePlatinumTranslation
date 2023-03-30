@@ -1,4 +1,7 @@
 # Pokémon Following and Following Renegade Translation
+
+![GitHub release (by tag)](https://img.shields.io/github/downloads/christt105/PokemonFollowingRenegadePlatinumTranslation/Following/total?style=flat-square)
+![GitHub release (by tag)](https://img.shields.io/github/downloads/christt105/PokemonFollowingRenegadePlatinumTranslation/FollowingRenegade/total?style=flat-square)
  
 Repository used to translate Pokémon Following Platinum and Pokémon Following Renegade Platinum to Spanish. The translation of Following Platinum is using the original texts from Spanish rom and translated the new content. The translation of Following Renegade Platinum is based on the translation of Pokémon Renegade Platinum to Spanish from [Drakyem](https://twitter.com/drakyem) and added the translation of Following Platinum. The tool used is `thenewpoketext`. I am a beginner in ROM hacking, so I am sure that there are better ways to do this. I hope this can be useful for someone.
 
