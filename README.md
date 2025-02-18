@@ -15,7 +15,7 @@ Special Thanks to:
 
 In order to use the repository you need to have [Python 3](https://www.python.org/downloads/) installed. You also need the assets to translate. In my case I have used the following ones:
 
-* PokePlatinumEn.nds [Pokémon Platinum (English)]
+* PokePlatinumEn.nds [Pokémon Platinum USA 3541]
 * PokePlatinumEs.nds [Pokémon Platinum (Spanish)]
 * PokeRenegadeEn.nds [Pokémon Renegade Platinum (English)] ([patched](https://pokehacking.com/fangames/renegade-platinum/))
 * PokeRenegadeEs.nds [Pokémon Renegade Platinum (Spanish)] ([patched](https://pokehacking.com/fangames/renegade-platinum/))
