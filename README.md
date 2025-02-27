@@ -3,13 +3,21 @@
 ![GitHub release (by tag)](https://img.shields.io/github/downloads/christt105/PokemonFollowingRenegadePlatinumTranslation/Following/total?style=flat-square)
 ![GitHub release (by tag)](https://img.shields.io/github/downloads/christt105/PokemonFollowingRenegadePlatinumTranslation/FollowingRenegade/total?style=flat-square)
  
-Repository used to translate Pokémon Following Platinum and Pokémon Following Renegade Platinum to Spanish. The translation of Following Platinum is using the original texts from Spanish rom and translated the new content. The translation of Following Renegade Platinum is based on the translation of Pokémon Renegade Platinum to Spanish from [Drakyem](https://twitter.com/drakyem) and added the translation of Following Platinum. The tool used is `thenewpoketext`. I am a beginner in ROM hacking, so I am sure that there are better ways to do this. I hope this can be useful for someone.
+Repositorio utilizado para traducir Pokémon Following Platinum y Pokémon Following Renegade Platinum al español.  
+La traducción de Following Platinum usa los textos originales de la ROM en español y traduce el contenido nuevo.  
+La traducción de Following Renegade Platinum se basa en la traducción de Pokémon Renegade Platinum al español de [Drakyem](https://twitter.com/drakyem) y añade la traducción de Following Platinum.  
+La herramienta utilizada es `thenewpoketext`. Soy principiante en el ROM hacking, así que seguro hay mejores maneras de hacerlo, pero espero que esto sea útil para alguien.  
 
-Special Thanks to:
-* [Drayano](https://twitter.com/Drayano60): Creator of Pokémon Renegade Platinum
-* [Drakyem](https://twitter.com/drakyem): Translator of Pokémon Renegade Platinum to Spainsh
-* [Mikelan98](https://twitter.com/Mikelan98) and [AdAstra](https://twitter.com/AdAstra_GL): Creators of Pokémon Following Platinum
-* [u/chensquared-art](https://www.reddit.com/r/PokemonROMhacks/comments/s4fbhi/complete_renegade_platinum_and_following_platinum/): Integration of Pokémon Following Platinum into Pokémon Renegade Platinum
+### Más información  
+Si quieres saber más o participar en el debate sobre la traducción, puedes visitar el siguiente enlace:  
+🗨️ [Foro de Whack a Hack sobre Pokémon Following Platinum en Español](https://whackahack.com/foro/threads/pokemon-following-platinum-espanol.68015/)  
+
+### Agradecimientos  
+* [Drayano](https://twitter.com/Drayano60): Creador de Pokémon Renegade Platinum  
+* [Drakyem](https://twitter.com/drakyem): Traductor de Pokémon Renegade Platinum al español  
+* [Mikelan98](https://twitter.com/Mikelan98) y [AdAstra](https://twitter.com/AdAstra_GL): Creadores de Pokémon Following Platinum  
+* [u/chensquared-art](https://www.reddit.com/r/PokemonROMhacks/comments/s4fbhi/complete_renegade_platinum_and_following_platinum/): Integración de Pokémon Following Platinum en Pokémon Renegade Platinum  
+* [christt105](https://github.com/christt105): Traductor de Pokémon Following Platinum y creador de los parches de Following y Following Renegade en español.
 
 ## Setup
 
