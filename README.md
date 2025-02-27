@@ -10,7 +10,7 @@ La herramienta utilizada es `thenewpoketext`. Soy principiante en el ROM hacking
 
 ### Más información  
 Si quieres saber más o participar en el debate sobre la traducción, puedes visitar el siguiente enlace:  
-🗨️ [Foro de Whack a Hack sobre Pokémon Following Platinum en Español](https://whackahack.com/foro/threads/pokemon-following-platinum-espanol.68015/)  
+🗨️ [Foro de Whack a Hack sobre Pokémon Following Renegade Platinum en Español](https://whackahack.com/foro/threads/pokemon-following-renegade-platinum-espanol.68016/)  
 
 ### Agradecimientos  
 * [Drayano](https://twitter.com/Drayano60): Creador de Pokémon Renegade Platinum  
